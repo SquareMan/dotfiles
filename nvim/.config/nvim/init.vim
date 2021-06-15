@@ -1,0 +1,150 @@
+let mapleader = "\<Space>"
+
+" =============================================================================
+"  PLUGINS
+" =============================================================================
+call plug#begin()
+
+" UI
+Plug 'itchyny/lightline.vim' " Statusline
+Plug 'gcavallanti/vim-noscrollbar' " Statusline psudo-scrollbar
+
+" Workspace
+Plug 'airblade/vim-rooter'
+Plug 'scrooloose/nerdtree' " File Explorer
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-fugitive'
+ 
+call plug#end()
+
+" =============================================================================
+"  STATUSLINE
+" =============================================================================
+
+" Customize statusline. Integrate vim-noscrollbar and combine
+" file modified indicator into filename component
+let g:lightline = {
+    \   'colorscheme': 'darcula',
+    \   'active': {
+    \       'right': [
+    \           [ 'lineinfo', 'scrollbar' ],
+    \           [ 'percent' ],
+    \           [ 'fileformat', 'fileencoding', 'filetype' ]
+    \       ],
+    \       'left':  [
+    \           [ 'mode', 'paste'],
+    \           [ 'coc-status', 'git' ],
+    \           [ 'readonly', 'filename' ]
+    \       ],
+    \   },
+    \   'component_function': {
+    \       'coc-status': 'coc#status',
+    \       'git': 'FugitiveStatusline',
+    \       'filename': 'LightlineFilename',
+    \       'scrollbar': 'noscrollbar#statusline',
+    \   }
+    \}
+
+" Function for combining modified indicator with filename
+function! LightlineFilename()
+	let filename = expand('%:F') !=# '' ? expand('%:F') : '[No Name]'
+	let modified = &modified ? ' +' : ''
+	return filename . modified
+endfunction
+
+" =============================================================================
+"  SETTINGS
+" =============================================================================
+
+" This option allows showing effects of some commands incrementally
+" as they are being typed, such as :substitute
+if has('nvim')
+	set inccommand=nosplit
+end
+
+" Merge signcolumn and linenumber if feature is available
+" otherwise have it always available
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+    set signcolumn=number
+else
+    set signcolumn=yes
+end
+
+" Autocomplete on tab
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
+
+" Navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Semantic navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Code actions
+nmap <silent> <leader>a :CocAction<CR>
+
+" Map function and class text objects
+" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+xmap if <Plug>(coc-funcobj-i)
+omap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
+
+" Quicksave
+nmap <leader>w :w<CR>
+
+set background=dark
+syntax on
+set showcmd " Show partial command letters in status line
+set shortmess+=I " Disable the default Vim startup message.
+set number relativenumber " Show relative line numbers.
+set softtabstop=4 shiftwidth=4 expandtab " Shorter tabstops please
+set ignorecase " Case-insentive searching
+set smartcase " Override 'ignorecase' when capital letters are used
+set incsearch " Enable searching as you type
+nmap Q <Nop> " Unbind Ex mode
+set noerrorbells visualbell t_vb= " Disable audible bell
+set mouse+=a " Enable mouse support.
+
+" Rust
+let g:rustfmt_autosave = 1
+nmap <leader>rn <Plug>(coc-rename)
+
+nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+
+" Try to prevent bad habits like using the arrow keys for movement. This is
+" not the only possible bad habit. For example, holding down the h/j/k/l keys
+" for movement, rather than using more efficient movement commands, is also a
+" bad habit. The former is enforceable through a .vimrc, while we don't know
+" how to prevent the latter.
+"
+" NOTE: Leaving these mapped for now because of colemak layout moving letters
+" and usind a custom layout to map arrow keys to main keyboard
+" Do this in normal mode...
+" nnoremap <Left>  :echoe "Use h"<CR>
+" nnoremap <Right> :echoe "Use l"<CR>
+" nnoremap <Up>    :echoe "Use k"<CR>
+" nnoremap <Down>  :echoe "Use j"<CR>
+" " ...and in insert mode
+" inoremap <Left>  <ESC>:echoe "Use h"<CR>
+" inoremap <Right> <ESC>:echoe "Use l"<CR>
+" inoremap <Up>    <ESC>:echoe "Use k"<CR>
+" inoremap <Down>  <ESC>:echoe "Use j"<CR>
