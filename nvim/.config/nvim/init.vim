@@ -72,6 +72,9 @@ else
     set signcolumn=yes
 end
 
+" Improve Coc Error Popup readability
+hi Pmenu ctermbg=3
+
 " Autocomplete on tab
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
