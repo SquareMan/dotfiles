@@ -77,6 +77,14 @@ end
 " Improve Coc Error Popup readability
 hi Pmenu ctermbg=3
 
+" =============================================================================
+"  MAPPINGS
+" =============================================================================
+
+" Open Files
+map <C-o> :Files<CR>
+map <leader>o :Buffers<CR>
+
 " Autocomplete on tab
 inoremap <silent><expr> <TAB>
     \ pumvisible() ? "\<C-n>" :
