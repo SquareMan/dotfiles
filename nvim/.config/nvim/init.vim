@@ -77,9 +77,44 @@ end
 " Improve Coc Error Popup readability
 hi Pmenu ctermbg=3
 
+set background=dark
+syntax on
+set showcmd " Show partial command letters in status line
+set shortmess+=I " Disable the default Vim startup message.
+set number relativenumber " Show relative line numbers.
+set softtabstop=4 shiftwidth=4 expandtab " Shorter tabstops please
+set ignorecase smartcase incsearch " Smarter searching
+set noerrorbells visualbell t_vb= " Disable audible bell
+set mouse+=a " Enable mouse support.
+set splitright splitbelow " Invert normal split behavior
+
+" Auto RustFmt
+let g:rustfmt_autosave = 1
+
 " =============================================================================
 "  MAPPINGS
 " =============================================================================
+
+" Unbind Ex mode
+nmap Q <Nop> 
+
+" Swap J and K to be more colemak friendly
+noremap j k|noremap k j
+noremap gj gk|noremap gk gj
+
+" Quicksave
+nmap <leader>w :w<CR>
+
+" Centered search results
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
+" Stop searching
+nmap <C-h> :nohlsearch<CR>
+vmap <C-h> :nohlsearch<CR>
 
 " Open Files
 map <C-o> :Files<CR>
@@ -106,6 +141,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
 " Code actions
 nmap <silent> <leader>a :CocAction<CR>
@@ -121,26 +157,6 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
-" Quicksave
-nmap <leader>w :w<CR>
-
-set background=dark
-syntax on
-set showcmd " Show partial command letters in status line
-set shortmess+=I " Disable the default Vim startup message.
-set number relativenumber " Show relative line numbers.
-set softtabstop=4 shiftwidth=4 expandtab " Shorter tabstops please
-set ignorecase " Case-insentive searching
-set smartcase " Override 'ignorecase' when capital letters are used
-set incsearch " Enable searching as you type
-nmap Q <Nop> " Unbind Ex mode
-set noerrorbells visualbell t_vb= " Disable audible bell
-set mouse+=a " Enable mouse support.
-
-" Rust
-let g:rustfmt_autosave = 1
-nmap <leader>rn <Plug>(coc-rename)
-
 nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 
 " Try to prevent bad habits like using the arrow keys for movement. This is
@@ -149,15 +165,13 @@ nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
 " bad habit. The former is enforceable through a .vimrc, while we don't know
 " how to prevent the latter.
 "
-" NOTE: Leaving these mapped for now because of colemak layout moving letters
-" and usind a custom layout to map arrow keys to main keyboard
 " Do this in normal mode...
-" nnoremap <Left>  :echoe "Use h"<CR>
-" nnoremap <Right> :echoe "Use l"<CR>
-" nnoremap <Up>    :echoe "Use k"<CR>
-" nnoremap <Down>  :echoe "Use j"<CR>
-" " ...and in insert mode
-" inoremap <Left>  <ESC>:echoe "Use h"<CR>
-" inoremap <Right> <ESC>:echoe "Use l"<CR>
-" inoremap <Up>    <ESC>:echoe "Use k"<CR>
-" inoremap <Down>  <ESC>:echoe "Use j"<CR>
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+" ...and in insert mode
+inoremap <Left>  <ESC>:echoe "Use h"<CR>
+inoremap <Right> <ESC>:echoe "Use l"<CR>
+inoremap <Up>    <ESC>:echoe "Use k"<CR>
+inoremap <Down>  <ESC>:echoe "Use j"<CR>
