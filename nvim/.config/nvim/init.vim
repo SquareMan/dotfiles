@@ -74,6 +74,9 @@ else
     set signcolumn=yes
 end
 
+" Color
+set termguicolors
+
 " Improve Coc Error Popup readability
 hi Pmenu ctermbg=3
 
@@ -117,7 +120,7 @@ nmap <C-h> :nohlsearch<CR>
 vmap <C-h> :nohlsearch<CR>
 
 " Open Files
-map <C-o> :Files<CR>
+map <C-p> :Files<CR>
 map <leader>o :Buffers<CR>
 
 " Autocomplete on tab
