@@ -16,9 +16,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-fugitive'
  
+" Language
+Plug 'rust-lang/rust.vim'
+Plug 'cespare/vim-toml'
+
 call plug#end()
 
 " =============================================================================
