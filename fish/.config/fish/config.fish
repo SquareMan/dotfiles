@@ -1,6 +1,7 @@
 abbr -a e $EDITOR
 abbr -a c cargo
-abbr -a ct cargo test
+abbr -a ct 'cargo test'
+abbr -a clippy 'cargo clippy'
 abbr -a g git
 abbr -a ga 'git add -p'
 abbr -a gd 'git diff'
