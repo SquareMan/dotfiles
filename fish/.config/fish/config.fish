@@ -18,6 +18,10 @@ else
 	abbr -a lll 'ls -la'
 end
 
+function melddump
+	meld (hexdump -C $argv[1] | psub) (hexdump -C $argv[2] | psub)
+end
+
 function fish_greeting
 	echo
 	echo -e (uname -ro | awk '{print " \\\\e[1mOS: \\\\e[0;32m"$0"\\\\e[0m"}')
