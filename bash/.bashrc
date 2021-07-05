@@ -17,9 +17,6 @@ export WINEPATH=/home/admin/bfbb/decomp/tools/mwcc_compiler/2.0
 alias diffpy='./diff.py -mwort'
 alias diffnor='./diff.py -mwot'
 
-#use multithreading by default for make
-alias make='make -j$(nproc)'
-
 #alias for xbone pairing
 alias pairx="sudo systemctl kill -s SIGUSR1 xow"
 

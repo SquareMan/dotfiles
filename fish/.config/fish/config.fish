@@ -7,6 +7,8 @@ abbr -a ga 'git add -p'
 abbr -a gd 'git diff'
 abbr -a gs 'git status'
 
+set -x MAKEFLAGS -j(nproc)
+
 if command -v exa > /dev/null
 	abbr -a l 'exa'
 	abbr -a ls 'exa'
