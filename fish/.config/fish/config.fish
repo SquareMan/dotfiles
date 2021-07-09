@@ -20,6 +20,20 @@ else
 	abbr -a lll 'ls -la'
 end
 
+function catbackup
+        if test (count $argv) -ne 1
+		echo "No argument given"
+		return
+	end
+
+        set -l zipname $argv[1].(pacman -Qi cataclysm-dda-git | grep Version | awk '{print $3}' | cut -d- -f1).zip
+        if test -f $zipname
+                echo "Resulting file already exists"
+                return
+        end
+        zip -r $zipname $argv[1]
+end
+
 function melddump
 	meld (hexdump -C $argv[1] | psub) (hexdump -C $argv[2] | psub)
 end
