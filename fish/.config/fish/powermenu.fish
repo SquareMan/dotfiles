@@ -1,22 +1,21 @@
 #!/bin/fish
 
 # Determine relavant options
-set OPTIONS Shutdown
-set -a OPTIONS Restart
+set OPTIONS "Shutdown\nRestart"
 if test (cat /proc/cmdline | tr ' ' \n | grep resume=)
-    set -a OPTIONS Hibernate
+    set OPTIONS "$OPTIONS"\\nHibernate
 end
 
-set -l CHOICE (echo $OPTIONS | rofi -sep ' ' -dmenu)
+set -l CHOICE (echo -e $OPTIONS | rofi -dmenu)
 if test -z "$CHOICE"
     exit 
 end
 
 # Perform selected option
-if test $CHOICE = Shutdown
+if test "$CHOICE" = Shutdown
     poweroff
-else if test $CHOICE = Restart
+else if test "$CHOICE" = Restart
     reboot
-else if test $CHOICE = Hibernate
+else if test "$CHOICE" = Hibernate
     systemctl hibernate
 end
