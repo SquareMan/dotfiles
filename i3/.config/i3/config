@@ -64,6 +64,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+s exec "rofi -modi drun,run -show drun"
 bindsym $mod+Tab exec "rofi -modi window -show window"
 
+# rofi powermenu
+bindsym Control+Mod1+Delete exec ~/.config/fish/powermenu.fish
+
 # Program bindings
 bindsym $mod+F1 exec firefox
 bindsym $mod+F2 exec steam
