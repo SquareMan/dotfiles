@@ -11,12 +11,11 @@ Plug 'gcavallanti/vim-noscrollbar' " Statusline psudo-scrollbar
 
 " Workspace
 Plug 'airblade/vim-rooter'
-Plug 'scrooloose/nerdtree' " File Explorer
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-fugitive'
  
 " Language
 Plug 'rust-lang/rust.vim'
