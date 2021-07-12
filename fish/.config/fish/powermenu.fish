@@ -6,7 +6,7 @@ if test (cat /proc/cmdline | tr ' ' \n | grep resume=)
     set OPTIONS "$OPTIONS"\\nHibernate
 end
 
-set -l CHOICE (echo -e $OPTIONS | rofi -dmenu)
+set -l CHOICE (echo -e $OPTIONS | rofi -dmenu -p Power)
 if test -z "$CHOICE"
     exit 
 end
