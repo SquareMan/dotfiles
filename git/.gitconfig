@@ -3,3 +3,5 @@
 	name = Steven Casper
 [init]
 	defaultBranch = main
+[pull]
+	ff = only
