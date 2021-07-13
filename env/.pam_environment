@@ -1,4 +1,5 @@
 TERMINAL=kitty
 EDITOR=nvim
 
+PATH DEFAULT=${PATH}:@{HOME}/.local/bin
 PATH DEFAULT=${PATH}:@{HOME}/.cargo/bin
