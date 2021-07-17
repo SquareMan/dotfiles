@@ -8,11 +8,6 @@ export EDITOR=nvim
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=${PATH}:~/.local/bin
-
-# Add bfbb linker
-export WINEPATH=/home/admin/bfbb/decomp/tools/mwcc_compiler/2.0
-
 # diff.py alias for bfbbdecomp
 alias diffpy='./diff.py -mwort'
 alias diffnor='./diff.py -mwot'
