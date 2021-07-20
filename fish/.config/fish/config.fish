@@ -6,6 +6,7 @@ abbr -a clippy 'cargo clippy'
 abbr -a g git
 abbr -a ga 'git add -p'
 abbr -a gd 'git diff'
+abbr -a gds 'git diff --staged'
 abbr -a gs 'git status'
 
 set -x MAKEFLAGS -j(math (nproc)-2)
