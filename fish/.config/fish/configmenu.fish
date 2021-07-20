@@ -1,4 +1,7 @@
 #!/bin/fish
 
 set -l CHOICE (echo "$configs" | rofi -sep ' ' -dmenu)
-$TERMINAL $EDITOR $CHOICE
+
+if test -f "$CHOICE"
+    $TERMINAL $EDITOR $CHOICE
+end
