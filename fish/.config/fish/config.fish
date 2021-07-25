@@ -5,6 +5,7 @@ abbr -a ct 'cargo test'
 abbr -a clippy 'cargo clippy'
 abbr -a g git
 abbr -a ga 'git add -p'
+abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
 abbr -a gds 'git diff --staged'
 abbr -a gs 'git status'
