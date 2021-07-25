@@ -156,7 +156,9 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Code actions
-nmap <silent> <leader>a :CocAction<CR>
+nmap <silent> <leader>ca :CocAction<CR>
+nmap <silent> <leader>cl <Plug>(coc-codelens-action)
+nmap <silent> <leader>cs :CocList symbols<CR>
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
