@@ -57,7 +57,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3 xwindow
 ; modules-center = mpd
-modules-right = filesystem pulseaudio wlan memory gpu cpu temperature date battery powermenu
+modules-right = filesystem pulseaudio memory gpu cpu temperature date battery powermenu
 
 tray-position = right
 tray-padding = 2
