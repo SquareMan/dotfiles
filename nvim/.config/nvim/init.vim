@@ -21,6 +21,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 
+" Debugging
+Plug 'puremourning/vimspector'
+
 call plug#end()
 
 " =============================================================================
@@ -95,6 +98,10 @@ set splitright splitbelow " Invert normal split behavior
 
 " Auto RustFmt
 let g:rustfmt_autosave = 1
+
+" Vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = [ 'CodeLLDB' ]
 
 " =============================================================================
 "  MAPPINGS

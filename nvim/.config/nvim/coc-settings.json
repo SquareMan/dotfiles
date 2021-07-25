@@ -1,3 +1,4 @@
 {
+    "rust-analyzer.debug.vimspector.configuration.name": "rust - lldb",
     "rust-analyzer.cargo.allFeatures": true
 }
