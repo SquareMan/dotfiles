@@ -10,7 +10,7 @@ abbr -a gd 'git diff'
 abbr -a gds 'git diff --staged'
 abbr -a gs 'git status'
 
-set -x MAKEFLAGS -j(math (nproc)-2)
+set -x MAKEFLAGS -j(math (nproc)/2)
 
 if command -v exa > /dev/null
 	abbr -a l 'exa'
