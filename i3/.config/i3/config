@@ -63,9 +63,14 @@ bindsym $mod+Tab exec "rofi -modi window -show window"
 # rofi powermenu
 bindsym Control+Mod1+Delete exec ~/.config/fish/powermenu.fish
 
+# Layout Manager
+bindsym $mod+h exec i3-layout-manager
+
 # Program bindings
 bindsym $mod+F1 exec firefox
-bindsym $mod+F2 exec steam
+bindsym $mod+F2 exec thunar
+bindsym $mod+F5 exec steam
+bindsym $mod+F6 exec startcode
 bindsym $mod+F12 exec 1password
 
 # Screenshots (flameshot)
