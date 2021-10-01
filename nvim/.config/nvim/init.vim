@@ -97,6 +97,7 @@ set ignorecase smartcase incsearch " Smarter searching
 set noerrorbells visualbell t_vb= " Disable audible bell
 set mouse+=a " Enable mouse support.
 set splitright splitbelow " Invert normal split behavior
+set foldmethod=syntax foldlevelstart=99 " code folding
 
 " Auto RustFmt
 let g:rustfmt_autosave = 1
