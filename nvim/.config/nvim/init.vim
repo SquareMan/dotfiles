@@ -163,6 +163,10 @@ nmap <silent> <leader>ca :CocAction<CR>
 nmap <silent> <leader>cl <Plug>(coc-codelens-action)
 nmap <silent> <leader>cs :CocList symbols<CR>
 
+" Debugging
+nmap <leader>dl :call vimspector#Launch()<CR>
+nmap <leader>dq :VimspectorReset<CR>
+
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
