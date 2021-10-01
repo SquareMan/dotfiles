@@ -85,7 +85,7 @@ end
 set termguicolors
 
 " Improve Coc Error Popup readability
-hi Pmenu ctermbg=3 guibg = yellow
+hi Pmenu guibg=#6466d
 
 set background=dark
 syntax on
