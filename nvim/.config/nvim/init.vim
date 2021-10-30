@@ -118,6 +118,9 @@ nmap Q <Nop>
 noremap j k|noremap k j
 noremap gj gk|noremap gk gj
 
+" Copy to clipboard
+xnoremap <silent> <leader>y <esc>:'<,'>:w !xclip -selection clipboard<CR>
+
 " Quicksave
 nmap <leader>w :w<CR>
 
