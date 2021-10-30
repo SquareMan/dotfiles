@@ -22,6 +22,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
+Plug 'rhysd/vim-clang-format'
 
 " Debugging
 Plug 'puremourning/vimspector'
