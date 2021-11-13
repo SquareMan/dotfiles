@@ -14,9 +14,16 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
- 
+" LSP/Autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
 " Language
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -28,6 +35,9 @@ Plug 'rhysd/vim-clang-format'
 Plug 'puremourning/vimspector'
 
 call plug#end()
+
+" Initialize and configure autocomplete
+luafile ~/.config/nvim/autocomplete.lua
 
 " =============================================================================
 "  STATUSLINE
@@ -45,13 +55,10 @@ let g:lightline = {
     \       ],
     \       'left':  [
     \           [ 'mode', 'paste'],
-    \           [ 'coc-status', 'git' ],
     \           [ 'readonly', 'filename' ]
     \       ],
     \   },
     \   'component_function': {
-    \       'coc-status': 'coc#status',
-    \       'git': 'FugitiveStatusline',
     \       'filename': 'LightlineFilename',
     \       'scrollbar': 'noscrollbar#statusline',
     \   }
@@ -99,6 +106,7 @@ set noerrorbells visualbell t_vb= " Disable audible bell
 set mouse+=a " Enable mouse support.
 set splitright splitbelow " Invert normal split behavior
 set foldmethod=syntax foldlevelstart=99 " code folding
+set completeopt=menu,menuone,noselect " Completion menu behavior
 
 " Auto RustFmt
 let g:rustfmt_autosave = 1
@@ -139,45 +147,6 @@ vmap <C-h> :nohlsearch<CR>
 map <C-p> :Files<CR>
 map <leader>o :Buffers<CR>
 
-" Autocomplete on tab
-inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
-endfunction
-
-" Navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Semantic navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-
-" Code actions
-nmap <silent> <leader>ca :CocAction<CR>
-nmap <silent> <leader>cl <Plug>(coc-codelens-action)
-nmap <silent> <leader>cs :CocList symbols<CR>
-
 " Debugging
 nmap <leader>dl :call vimspector#Launch()<CR>
 nmap <leader>dq :VimspectorReset<CR>
-
-" Map function and class text objects
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xmap if <Plug>(coc-funcobj-i)
-omap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap af <Plug>(coc-funcobj-a)
-xmap ic <Plug>(coc-classobj-i)
-omap ic <Plug>(coc-classobj-i)
-xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a)
