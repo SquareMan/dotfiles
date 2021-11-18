@@ -52,5 +52,11 @@
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   require('lspconfig')['rust_analyzer'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        local basics = require('lsp_basics')
+
+        basics.make_lsp_commands(client, bufnr)
+        basics.make_lsp_mappings(client, bufnr)
+    end
   }

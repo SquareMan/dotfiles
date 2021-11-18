@@ -16,6 +16,7 @@ Plug 'junegunn/fzf.vim'
 
 " LSP/Autocomplete
 Plug 'neovim/nvim-lspconfig'
+Plug 'nanotee/nvim-lsp-basics'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -37,7 +38,7 @@ Plug 'puremourning/vimspector'
 call plug#end()
 
 " Initialize and configure autocomplete
-luafile ~/.config/nvim/autocomplete.lua
+luafile ~/.config/nvim/lua/autocomplete.lua
 
 " =============================================================================
 "  STATUSLINE
@@ -150,3 +151,17 @@ map <leader>o :Buffers<CR>
 " Debugging
 nmap <leader>dl :call vimspector#Launch()<CR>
 nmap <leader>dq :VimspectorReset<CR>
+
+" Semantic Navigation
+nmap gd :LspDefinition<CR>
+nmap gt :LspTypeDefinition<CR>
+nmap gi :LspImplemntation<CR>
+nmap gr :LspIncomingCalls<CR>
+nmap gs :LspDocumentSymbol<CR>
+nmap gS :LspWorkspaceSymbol<CR>
+
+nmap <leader>cr :LspRename<CR>
+nmap <leader>ca :LspCodeAction<CR>
+
+nmap <leader>sd :LspHover<CR>
+nmap <leader>ss :LspSignatureHelp<CR>
