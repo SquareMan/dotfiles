@@ -9,6 +9,7 @@ abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
 abbr -a gds 'git diff --staged'
 abbr -a gs 'git status'
+abbr -a cdg 'cd (git rev-parse --show-toplevel)'
 
 set -x MAKEFLAGS -j(math (nproc)/2)
 
