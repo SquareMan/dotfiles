@@ -8,6 +8,7 @@ abbr -a ga 'git add -p'
 abbr -a gco 'git checkout'
 abbr -a gd 'git diff'
 abbr -a gds 'git diff --staged'
+abbr -a gl 'git log --oneline'
 abbr -a gs 'git status'
 abbr -a cdg 'cd (git rev-parse --show-toplevel)'
 
