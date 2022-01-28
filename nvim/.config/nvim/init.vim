@@ -140,6 +140,10 @@ nnoremap <silent> * *zz
 nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
+" Repeat last Tabular pattern
+nmap <leader>f :Tab<CR>
+vmap <leader>f :Tab<CR>
+
 " Stop searching
 nmap <C-h> :nohlsearch<CR>
 vmap <C-h> :nohlsearch<CR>
@@ -155,7 +159,7 @@ nmap <leader>dq :VimspectorReset<CR>
 " Semantic Navigation
 nmap gd :LspDefinition<CR>
 nmap gt :LspTypeDefinition<CR>
-nmap gi :LspImplemntation<CR>
+nmap gi :LspImplementation<CR>
 nmap gr :LspIncomingCalls<CR>
 nmap gs :LspDocumentSymbol<CR>
 nmap gS :LspWorkspaceSymbol<CR>
