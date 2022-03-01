@@ -203,7 +203,7 @@ label = %percentage:2%%
 
 [module/gpu]
 type = custom/script
-exec = nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader | tr -d ' '
+exec = if command -v nvidia-smi; then nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader | tr -d ' '; fi
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
