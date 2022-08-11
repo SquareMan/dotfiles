@@ -1,0 +1,43 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "j",
+        "command": "dance.select.up.jump",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "k",
+        "command": "-dance.select.up.jump",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "k",
+        "command": "dance.select.down.jump",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "j",
+        "command": "-dance.select.down.jump",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "enter",
+        "command": "dance.selections.reduce",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": ";",
+        "command": "-dance.selections.reduce",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": ";",
+        "command": "dance.selections.toggleIndices",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "enter",
+        "command": "-dance.selections.toggleIndices",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    }
+]
