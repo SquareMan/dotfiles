@@ -237,6 +237,329 @@
           ]
         }
       }
+    },
+    "leader": {
+      "items": {
+        "f": {
+          "text": "file...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "file" }]
+        },
+        "b": {
+          "text": "buffer...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "buffer" }]
+        },
+        "w": {
+          "text": "window...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "window" }]
+        },
+        "g": {
+          "text": "go...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "go" }]
+        },
+        "a": {
+          "text": "anchor...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "anchor" }]
+        },
+        "c": {
+          "text": "code...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "code" }]
+        },
+        "o": {
+          "text": "open...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "open" }]
+        },
+        "t": {
+          "text": "toggle...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "toggle" }]
+        },
+        "p": {
+          "text": "project...",
+          "command": "dance.openMenu",
+          "args": [{ "menu": "project" }]
+        },
+        ",": {
+          "text": "switch to open file...",
+          "command": "workbench.action.showAllEditors"
+        },
+        " ": {
+          "text": "quick open file...",
+          "command": "workbench.action.quickOpen"
+        }
+      }
+    },
+    "file": {
+      "items": {
+        "l": {
+          "text": "set language mode...",
+          "command": "workbench.action.editor.changeLanguageMode"
+        },
+        "r": {
+          "text": "recent files...",
+          "command": "workbench.action.openRecent"
+        },
+        "O": {
+          "text": "reopen with...",
+          "command": "workbench.files.action.reopenWithEditor"
+        },
+        "s": { "text": "save file", "command": "workbench.action.files.save" },
+        "w": {
+          "text": "save file without formatting",
+          "command": "workbench.action.files.saveWithoutFormatting"
+        },
+        "n": {
+          "text": "new file",
+          "command": "workbench.action.files.newUntitledFile"
+        },
+        "e": {
+          "text": "reveal in sidebar",
+          "command": "workbench.files.action.showActiveFileInExplorer"
+        },
+        "R": { "text": "rename", "command": "fileutils.renameFile" },
+        "P": {
+          "text": "open settings",
+          "command": "workbench.action.openSettingsJson"
+        },
+        "K": {
+          "text": "open keyboard shortcuts",
+          "command": "workbench.action.openGlobalKeybindingsFile"
+        }
+      }
+    },
+    "buffer": {
+      "items": {
+        "b": {
+          "text": "list editors...",
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+        },
+        "kc": {
+          "text": "close",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        "u": {
+          "text": "reopen closed editor",
+          "command": "workbench.action.reopenClosedEditor"
+        },
+        "n": {
+          "text": "next editor",
+          "command": "workbench.action.openNextRecentlyUsedEditor"
+        },
+        "r": {
+          "text": "revert editor",
+          "command": "workbench.action.files.revert"
+        },
+        "p": {
+          "text": "previous editor",
+          "command": "workbench.action.openPreviousRecentlyUsedEditor"
+        }
+      }
+    },
+    "window": {
+      "items": {
+        "w": {
+          "text": "navigate groups",
+          "command": "workbench.action.navigateEditorGroups"
+        },
+        "c": {
+          "text": "close group, keep editors",
+          "command": "workbench.action.joinTwoGroups"
+        },
+        "C": {
+          "text": "close group and editors",
+          "command": "workbench.action.closeEditorsInGroup"
+        },
+        "v": { "text": "v split", "command": "workbench.action.splitEditor" },
+        "s": {
+          "text": "h split",
+          "command": "workbench.action.splitEditorOrthogonal"
+        },
+        "r": {
+          "text": "rotate",
+          "command": "workbench.action.toggleEditorGroupLayout"
+        },
+        "m": {
+          "text": "toggle maximize",
+          "command": "workbench.action.toggleEditorWidths"
+        },
+        "o": {
+          "text": "merge all groups",
+          "command": "workbench.action.joinAllGroups"
+        },
+        "g": {
+          "text": "show editors in group",
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+        },
+        "h": {
+          "text": "focus left group",
+          "command": "workbench.action.focusLeftGroup"
+        },
+        "k": {
+          "text": "focus below group",
+          "command": "workbench.action.focusBelowGroup"
+        },
+        "j": {
+          "text": "focus above group",
+          "command": "workbench.action.focusAboveGroup"
+        },
+        "l": {
+          "text": "focus right group",
+          "command": "workbench.action.focusRightGroup"
+        },
+        "H": {
+          "text": "move group left",
+          "command": "workbench.action.moveActiveEditorGroupLeft"
+        },
+        "K": {
+          "text": "move group below",
+          "command": "workbench.action.moveActiveEditorGroupDown"
+        },
+        "J": {
+          "text": "move group above",
+          "command": "workbench.action.moveActiveEditorGroupUp"
+        },
+        "L": {
+          "text": "move group right",
+          "command": "workbench.action.moveActiveEditorGroupRight"
+        }
+      }
+    },
+    "go": {
+      "items": {
+        "l": { "text": "line...", "command": "workbench.action.gotoLine" },
+        "d": {
+          "text": "definition",
+          "command": "editor.action.revealDefinition"
+        },
+        "D": {
+          "text": "declaration",
+          "command": "editor.action.revealDeclaration"
+        },
+        "i": {
+          "text": "implementation",
+          "command": "editor.action.goToImplementation"
+        },
+        "t": {
+          "text": "type definition",
+          "command": "editor.action.goToTypeDefinition"
+        },
+        "r": {
+          "text": "references",
+          "command": "editor.action.goToReferences"
+        },
+        "h": {
+          "text": "hex address (if hexdump)...",
+          "command": "hexdump.gotoAddress"
+        }
+      }
+    },
+    "anchor": {
+      "items": {
+        "a": {
+          "text": "place anchor",
+          "command": "editor.action.setSelectionAnchor"
+        },
+        "s": {
+          "text": "select to anchor",
+          "command": "editor.action.selectFromAnchorToCursor"
+        },
+        "g": {
+          "text": "go to anchor",
+          "command": "editor.action.goToSelectionAnchor"
+        }
+      }
+    },
+    "code": {
+      "items": {
+        "F": {
+          "text": "format file with...",
+          "command": "editor.action.formatDocument.multiple"
+        },
+        "f": {
+          "text": "format file",
+          "command": "editor.action.formatDocument"
+        },
+        "r": { "text": "rename symbol", "command": "editor.action.rename" },
+        "a": {
+          "text": "sort lines ascending",
+          "command": "editor.action.sortLinesAscending"
+        },
+        "d": {
+          "text": "sort lines descending",
+          "command": "editor.action.sortLinesDescending"
+        },
+        "p": {
+          "text": "format selection",
+          "command": "editor.action.formatSelection"
+        }
+      }
+    },
+    "open": {
+      "items": {
+        "w": {
+          "text": "editor",
+          "command": "workbench.action.focusActiveEditorGroup"
+        },
+        "v": { "text": "view...", "command": "workbench.action.openView" },
+        "t": {
+          "text": "toggle terminal",
+          "command": "workbench.action.terminal.toggleTerminal"
+        },
+        "T": {
+          "text": "new terminal here",
+          "command": "workbench.action.terminal.newWithCwd",
+          "args": [{ "cwd": "${fileDirname}" }]
+        },
+        "p": {
+          "text": "toggle sidebar",
+          "command": "workbench.action.toggleSidebarVisibility"
+        },
+        "P": { "text": "sidebar", "command": "workbench.action.focusSideBar" },
+        "g": { "text": "SCM", "command": "workbench.view.scm" },
+        "x": { "text": "extensions", "command": "workbench.view.extensions" },
+        "e": { "text": "explorer", "command": "workbench.view.explorer" },
+        "d": { "text": "debug", "command": "workbench.view.debug" },
+        "s": { "text": "search", "command": "workbench.view.search" },
+        "c": {
+          "text": "problems",
+          "command": "workbench.actions.view.problems"
+        }
+      }
+    },
+    "toggle": {
+      "items": {
+        "w": { "text": "word wrap", "command": "editor.action.toggleWordWrap" },
+        "z": { "text": "zen", "command": "workbench.action.toggleZenMode" },
+        "s": {
+          "text": "whitespace",
+          "command": "editor.action.toggleRenderWhitespace"
+        },
+        "c": {
+          "text": "control characters",
+          "command": "editor.action.toggleRenderControlCharacter"
+        },
+        "A": {
+          "text": "activity bar",
+          "command": "workbench.action.toggleActivityBarVisibility"
+        }
+      }
+    },
+    "project": {
+      "items": {
+        "t": { "text": "test...", "command": "workbench.action.tasks.test" },
+        "b": { "text": "build...", "command": "workbench.action.tasks.build" },
+        "r": { "text": "run...", "command": "workbench.action.tasks.runTask" },
+        "d": {
+          "text": "run debug",
+          "command": "workbench.action.debug.selectandstart"
+        }
+      }
     }
   },
   "editor.fontSize": 16,
@@ -248,5 +571,6 @@
   "workbench.colorTheme": "Noctis Minimus",
   "workbench.editorAssociations": {
     "*.o": "hexEditor.hexedit"
-  }
+  },
+  "editor.renderWhitespace": "none"
 }

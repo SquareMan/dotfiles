@@ -45,5 +45,10 @@
         "command": "dance.openMenu",
         "when": "editorTextFocus && dance.mode == 'normal'",
         "args": { "input": "match" }
+    },
+    {
+        "key": "shift+space",
+        "command": "dance.openMenu",
+        "args": { "input": "leader"}
     }
 ]
