@@ -39,5 +39,11 @@
         "key": ";",
         "command": "-dance.selections.reduce",
         "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "m",
+        "command": "dance.openMenu",
+        "when": "editorTextFocus && dance.mode == 'normal'",
+        "args": { "input": "match" }
     }
 ]

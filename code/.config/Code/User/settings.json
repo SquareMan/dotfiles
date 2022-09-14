@@ -8,6 +8,237 @@
       "selectionBehavior": "character"
     }
   },
+  "dance.menus": {
+    "match": {
+      "items": {
+        "i": {
+          "text": "select inner object",
+          "command": "dance.seek.askObject.inner"
+        },
+        "a": {
+          "text": "select object",
+          "command": "dance.seek.askObject"
+        },
+        "s": {
+          "text": "surround around object",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "surround"
+            }
+          ]
+        },
+        "d": {
+          "text": "delete surround",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => x.slice(1, -1))",
+              "commands": [
+                ".selections.save",
+                ".selections.reduce.edges",
+                ".edit.delete",
+                ".selections.restore"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "surround": {
+      "items": {
+        "(": {
+          "text": "(surround)",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => '(' + x + ')')",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "("
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": ")"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "{": {
+          "text": "{surround}",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => '{' + x + '}')",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "{"
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": "}"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "[": {
+          "text": "[surround]",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => '[' + x + ']')",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "["
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": "]"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "<": {
+          "text": "<surround>",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => '<' + x + '>')",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "<"
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": ">"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "\"": {
+          "text": "\"surround\"",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => '\"' + x + '\"')",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "\""
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": "\""
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "'": {
+          "text": "'surround'",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => `'` + x + `'`)",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "'"
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": "'"
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        "`": {
+          "text": "`surround`",
+          "command": "dance.run",
+          "args": [
+            {
+              "input": "await replace((x) => '`' + x + '`')",
+              "commands": [
+                [
+                  ".edit.insert",
+                  {
+                    "where": "start",
+                    "shift": "extend",
+                    "text": "`"
+                  }
+                ],
+                [
+                  ".edit.insert",
+                  {
+                    "where": "end",
+                    "shift": "extend",
+                    "text": "`"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
