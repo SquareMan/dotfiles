@@ -7,11 +7,6 @@
     },
     {
         "key": "k",
-        "command": "-dance.select.up.jump",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "k",
         "command": "dance.select.down.jump",
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
@@ -21,13 +16,13 @@
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
-        "key": "enter",
-        "command": "dance.selections.reduce",
+        "key": "k",
+        "command": "-dance.select.up.jump",
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
-        "key": ";",
-        "command": "-dance.selections.reduce",
+        "key": "enter",
+        "command": "dance.selections.reduce",
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
@@ -38,6 +33,11 @@
     {
         "key": "enter",
         "command": "-dance.selections.toggleIndices",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": ";",
+        "command": "-dance.selections.reduce",
         "when": "editorTextFocus && dance.mode == 'normal'"
     }
 ]

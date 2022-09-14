@@ -1,21 +1,20 @@
 {
-  "git.autofetch": true,
-  "editor.formatOnSave": true,
-  "editor.fontSize": 16,
-  "terminal.integrated.fontSize": 16,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "dance.modes": {
     "normal": {
       "cursorStyle": "block",
       "selectionBehavior": "character"
     }
   },
-  "workbench.colorTheme": "Noctis Minimus",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
   "editor.inlayHints.enabled": "offUnlessPressed",
-  "rust-analyzer.checkOnSave.command": "build",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "prettier.singleQuote": true,
+  "rust-analyzer.checkOnSave.command": "build",
+  "terminal.integrated.fontSize": 16,
+  "workbench.colorTheme": "Noctis Minimus",
   "workbench.editorAssociations": {
     "*.o": "hexEditor.hexedit"
   }
