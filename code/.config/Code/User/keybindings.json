@@ -1,54 +1,99 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "j",
-        "command": "dance.select.up.jump",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "k",
-        "command": "dance.select.down.jump",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "j",
-        "command": "-dance.select.down.jump",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "k",
-        "command": "-dance.select.up.jump",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "enter",
-        "command": "dance.selections.reduce",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": ";",
-        "command": "dance.selections.toggleIndices",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "enter",
-        "command": "-dance.selections.toggleIndices",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": ";",
-        "command": "-dance.selections.reduce",
-        "when": "editorTextFocus && dance.mode == 'normal'"
-    },
-    {
-        "key": "m",
-        "command": "dance.openMenu",
-        "when": "editorTextFocus && dance.mode == 'normal'",
-        "args": { "input": "match" }
-    },
-    {
-        "key": "shift+space",
-        "command": "dance.openMenu",
-        "args": { "input": "leader"}
-    }
+  {
+    "key": "j",
+    "command": "dance.select.up.jump",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "k",
+    "command": "dance.select.down.jump",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "j",
+    "command": "-dance.select.down.jump",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "k",
+    "command": "-dance.select.up.jump",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "enter",
+    "command": "dance.selections.reduce",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": ";",
+    "command": "dance.selections.toggleIndices",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "enter",
+    "command": "-dance.selections.toggleIndices",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": ";",
+    "command": "-dance.selections.reduce",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "m",
+    "command": "dance.openMenu",
+    "when": "editorTextFocus && dance.mode == 'normal'",
+    "args": { "input": "match" }
+  },
+  {
+    "key": "space",
+    "command": "dance.openMenu",
+    "args": { "input": "leader" },
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "shift+space",
+    "command": "dance.openMenu",
+    "args": { "input": "leader" }
+  },
+  {
+    "key": "ctrl+n",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": ",",
+    "command": "dance.selections.clear.secondary",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "space",
+    "command": "-dance.selections.clear.secondary",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "alt+,",
+    "command": "dance.selections.clear.main",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": "alt+space",
+    "command": "-dance.selections.clear.main",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
+    "key": ",",
+    "command": "-dance.ignore",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
 ]
