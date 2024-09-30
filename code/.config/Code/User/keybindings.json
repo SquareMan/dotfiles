@@ -1,6 +1,11 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
+    "key": "x",
+    "command": "dance.select.line.below.extend",
+    "when": "editorTextFocus && dance.mode == 'normal'"
+  },
+  {
     "key": "j",
     "command": "dance.select.up.jump",
     "when": "editorTextFocus && dance.mode == 'normal'"
@@ -44,18 +49,24 @@
     "key": "m",
     "command": "dance.openMenu",
     "when": "editorTextFocus && dance.mode == 'normal'",
-    "args": { "input": "match" }
+    "args": {
+      "input": "match"
+    }
   },
   {
     "key": "space",
     "command": "dance.openMenu",
-    "args": { "input": "leader" },
+    "args": {
+      "input": "leader"
+    },
     "when": "editorTextFocus && dance.mode == 'normal'"
   },
   {
     "key": "shift+space",
     "command": "dance.openMenu",
-    "args": { "input": "leader" }
+    "args": {
+      "input": "leader"
+    }
   },
   {
     "key": "ctrl+n",
