@@ -1,0 +1,14 @@
+theme = "starlight"
+
+[editor]
+cursor-shape.insert = "bar"
+line-number = "relative"
+
+[keys.normal]
+j = "move_line_up"
+k = "move_line_down"
+"C-p" = "command_palette"
+
+[keys.normal.space]
+i = ":toggle lsp.display-inlay-hints"
+space = ":w"
