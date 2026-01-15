@@ -5,9 +5,13 @@ cursor-shape.insert = "bar"
 line-number = "relative"
 
 [keys.normal]
-j = "move_line_up"
-k = "move_line_down"
+j = "move_visual_line_up"
+k = "move_visual_line_down"
 "C-p" = "command_palette"
+
+[keys.select]
+j = "extend_visual_line_up"
+k = "extend_visual_line_down"
 
 [keys.normal.space]
 i = ":toggle lsp.display-inlay-hints"
